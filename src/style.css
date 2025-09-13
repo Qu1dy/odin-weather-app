@@ -1,11 +1,13 @@
 body {
-    padding: 0;
-    margin: 0;
     background-color: hsl(196, 20%, 69%);
+    display: flex;
+    flex-direction: column;
 }
 
 * {
     font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 header {
@@ -17,12 +19,20 @@ header {
 }
 
 header,
-header > * {
+.logo,
+form {
     display: flex;
     align-items: center;
 }
 
-header > * {
+search {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.logo,
+form {
     gap: 1rem;
 }
 
@@ -50,5 +60,71 @@ input:focus {
 
 img {
     width: 40px;
+}
+
+img,
+.card {
     aspect-ratio: 1;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.condition-icon {
+    width: 150px;
+}
+
+.card {
+    width: 90vw;
+    height: 50vh;
+    background-color: hsl(196, 50%, 69%);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 32px;
+    box-shadow: 0 0 10px hsl(0, 0%, 50%);
+}
+
+.card-header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 8rem;
+}
+
+.error.active {
+    display: block;
+    font-size: 1rem;
+    border: 2px solid red;
+    padding: 0 0.25rem;
+    font-weight: 700;
+    background-color: rgb(255, 161, 161);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.right h1 {
+    font-size: 1.8rem;
+}
+
+.right h2 {
+    font-weight: 350;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+#feelslike::before {
+    content: "Feels like: ";
+}
+
+#temp::before {
+    content: "Temp: ";
+}
+
+.temp::after {
+    content: "°";
 }

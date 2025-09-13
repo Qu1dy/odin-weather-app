@@ -14,13 +14,41 @@
     <body>
         <header>
             <div class="logo">
-                <img src="assets/logo.svg" alt="Logo" />
+                <img src="assets/svgs/logo.svg" alt="Logo" />
                 <h1>Weather</h1>
             </div>
             <search>
-                <input type="search" />
-                <button><img src="assets/search.svg" alt="Search" /></button>
+                <form novalidate>
+                    <input type="search" />
+                    <button>
+                        <img src="assets/svgs/search.svg" alt="Search" />
+                    </button>
+                </form>
+                <span class="error" hidden>Invalid location!</span>
             </search>
         </header>
+        <main>
+            <div class="card">
+                <div class="card-header">
+                    <div class="left">
+                        <img
+                            class="condition-icon"
+                            src="assets/gifs/clear-day.gif"
+                            alt="icon"
+                        />
+                    </div>
+                    <div class="right">
+                        <h1 id="location">London</h1>
+                        <h2 id="datetime">20:24</h2>
+                    </div>
+                </div>
+                <h2 id="conditions">Sunny</h2>
+                <h2 id="temp" class="temp">28</h2>
+                <h2 id="feelslike" class="temp">27</h2>
+                <h2 id="tempmin" class="temp">23</h2>
+                <h2 id="tempmax" class="temp">24</h2>
+                <h2 id="windspeed">0.2</h2>
+            </div>
+        </main>
     </body>
 </html>
