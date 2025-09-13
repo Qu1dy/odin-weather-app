@@ -97,7 +97,7 @@ main {
 
 .temps {
     display: grid;
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr) 0.75fr;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr) 0.65fr;
     gap: 1rem;
 }
 
