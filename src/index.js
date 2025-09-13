@@ -5,6 +5,7 @@ import Renderer from "./modules/renderer";
 const eventHandler = (() => {
     const form = document.querySelector("form");
     const switchButton = document.querySelector("#switch-units");
+    const windspeed = document.querySelector("#windspeed");
 
     const isDataValid = (data) => {
         if (!data) {
@@ -31,8 +32,11 @@ const eventHandler = (() => {
     };
 
     const _onSwitchButtonClick = () => {
+        windspeed.classList.remove(Weather.getUnitGroup().toLowerCase());
         Weather.changeUnitGroup();
         switchButton.textContent = Weather.getUnitGroup();
+        windspeed.classList.add(Weather.getUnitGroup().toLowerCase());
+        form.requestSubmit();
     };
 
     const _handleEvents = () => {

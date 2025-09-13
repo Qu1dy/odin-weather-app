@@ -97,7 +97,7 @@ main {
 
 .temps {
     display: grid;
-    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr) 0.75fr;
     gap: 1rem;
 }
 
@@ -167,6 +167,14 @@ main {
 
 #windspeed::before {
     content: "Wind speed: ";
+}
+
+#windspeed.c::after {
+    content: "km/h";
+}
+
+#windspeed.f::after {
+    content: "mph";
 }
 
 #switch-units {
