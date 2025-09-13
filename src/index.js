@@ -4,6 +4,7 @@ import Renderer from "./modules/renderer";
 
 const eventHandler = (() => {
     const form = document.querySelector("form");
+    const switchButton = document.querySelector("#switch-units");
 
     const isDataValid = (data) => {
         if (!data) {
@@ -29,8 +30,14 @@ const eventHandler = (() => {
         _getAndShowData(loc);
     };
 
+    const _onSwitchButtonClick = () => {
+        Weather.changeUnitGroup();
+        switchButton.textContent = Weather.getUnitGroup();
+    };
+
     const _handleEvents = () => {
         form.addEventListener("submit", async (e) => await _onSearch(e));
+        switchButton.addEventListener("click", _onSwitchButtonClick);
     };
 
     const init = () => {

@@ -59,7 +59,9 @@ const Weather = (() => {
         unitGroup = unitGroup === "metric" ? "us" : "metric";
     };
 
-    return { get, changeUnitGroup };
+    const getUnitGroup = () => (unitGroup === "metric" ? "C" : "F");
+
+    return { get, changeUnitGroup, getUnitGroup };
 })();
 
 export default Weather;

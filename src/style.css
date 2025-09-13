@@ -15,7 +15,7 @@ header {
     border-radius: 16px;
     box-sizing: border-box;
     padding: 1rem;
-    gap: 5rem;
+    justify-content: space-between;
 }
 
 header,
@@ -167,4 +167,13 @@ main {
 
 #windspeed::before {
     content: "Wind speed: ";
+}
+
+#switch-units {
+    border-radius: 32px;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 2px solid black;
 }
