@@ -74,7 +74,7 @@ main {
 }
 
 .condition-icon {
-    width: 150px;
+    width: 125px;
 }
 
 .card {
@@ -85,12 +85,20 @@ main {
     padding: 1rem;
     border-radius: 32px;
     box-shadow: 0 0 10px hsl(0, 0%, 50%);
+    display: flex;
+    flex-direction: column;
 }
 
 .card-header {
     display: grid;
-    grid-template-columns: 150px auto;
-    gap: 8rem;
+    grid-template-columns: 150px auto 7rem;
+    gap: 2rem;
+}
+
+.temps {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .error.active {
@@ -104,27 +112,59 @@ main {
     box-sizing: border-box;
 }
 
-.right h1 {
-    font-size: 1.8rem;
+.card h1 {
+    font-size: 2.1rem;
 }
 
-.right h2 {
+.card h2 {
+    font-size: 1.9rem;
+}
+
+.card h2::before {
+    padding-right: 0.25rem;
+}
+
+#datetime {
     font-weight: 350;
-}
-
-.right {
-    display: flex;
-    flex-direction: column;
 }
 
 #feelslike::before {
     content: "Feels like: ";
 }
 
-#temp::before {
-    content: "Temp: ";
+#humidity::before {
+    content: "Humidity: ";
+}
+
+#humidity::after {
+    content: "%";
+}
+
+#precipprob::before {
+    content: "Precip %: ";
+}
+
+#precipprob::after {
+    content: "%";
 }
 
 .temp::after {
     content: "°";
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3rem auto;
+}
+
+#tempmin::before {
+    content: "Min: ";
+}
+
+#tempmax::before {
+    content: "Max: ";
+}
+
+#windspeed::before {
+    content: "Wind speed: ";
 }

@@ -18,7 +18,6 @@ const Weather = (() => {
     };
 
     const _sanitizeData = (data) => {
-        if (!data) return null;
         const location = data.resolvedAddress;
         const cond = data.currentConditions;
         const today = data.days[0];
@@ -30,12 +29,14 @@ const Weather = (() => {
             feelslike,
             temp,
             windspeed,
+            precipprob,
         } = cond;
         const { tempmin, tempmax } = today;
 
         return {
             conditions,
             humidity,
+            precipprob,
             icon,
             feelslike,
             temp,
@@ -49,6 +50,7 @@ const Weather = (() => {
 
     const get = async (location) => {
         const data = await _getData(location);
+        if (!data) return null;
         const sanitized = _sanitizeData(data);
         return sanitized;
     };

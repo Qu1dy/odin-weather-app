@@ -15,14 +15,18 @@ const eventHandler = (() => {
         }
     };
 
+    const _getAndShowData = async (loc) => {
+        const data = await Weather.get(loc);
+        if (!isDataValid(data)) return;
+        Renderer.renderWeather(data);
+    };
+
     const _onSearch = async (e) => {
         e.preventDefault();
         const elements = form.elements;
         const locInput = elements[0];
         const loc = locInput.value;
-        const data = await Weather.get(loc);
-        if (!isDataValid(data)) return;
-        Renderer.renderWeather(data);
+        _getAndShowData(loc);
     };
 
     const _handleEvents = () => {
@@ -31,6 +35,7 @@ const eventHandler = (() => {
 
     const init = () => {
         _handleEvents();
+        _getAndShowData("texas");
     };
 
     return { init };

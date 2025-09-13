@@ -24,30 +24,37 @@
                         <img src="assets/svgs/search.svg" alt="Search" />
                     </button>
                 </form>
-                <span class="error" hidden>Invalid location!</span>
+                <span class="error" hidden></span>
             </search>
         </header>
         <main>
             <div class="card">
                 <div class="card-header">
-                    <div class="left">
-                        <img
-                            class="condition-icon"
-                            src="assets/gifs/clear-day.gif"
-                            alt="icon"
-                        />
+                    <img
+                        class="condition-icon"
+                        src="assets/gifs/clear-day.gif"
+                        alt="icon"
+                    />
+                    <div class="loc-container">
+                        <h1 id="location"></h1>
+                        <h2 id="temp" class="temp"></h2>
                     </div>
-                    <div class="right">
-                        <h1 id="location">London</h1>
-                        <h2 id="datetime">20:24</h2>
+                    <h2 id="datetime"></h2>
+                </div>
+                <div class="temps">
+                    <h2 id="feelslike" class="temp"></h2>
+                    <h2 id="windspeed"></h2>
+                    <div class="container">
+                        <img src="assets/svgs/down.svg" alt="Lowest" />
+                        <h2 id="tempmin" class="temp"></h2>
+                    </div>
+                    <h2 id="humidity"></h2>
+                    <h2 id="precipprob"></h2>
+                    <div class="container">
+                        <img src="assets/svgs/up.svg" alt="Highest" />
+                        <h2 id="tempmax" class="temp"></h2>
                     </div>
                 </div>
-                <h2 id="conditions">Sunny</h2>
-                <h2 id="temp" class="temp">28</h2>
-                <h2 id="feelslike" class="temp">27</h2>
-                <h2 id="tempmin" class="temp">23</h2>
-                <h2 id="tempmax" class="temp">24</h2>
-                <h2 id="windspeed">0.2</h2>
             </div>
         </main>
     </body>
